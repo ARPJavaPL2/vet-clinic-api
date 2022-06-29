@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: vet-clinic-api
+  jpa:
+    # https://github.com/spring-projects/spring-boot/issues/7107
+    # https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot
+    # NOTE: turning it off may result in LazyInitializationException.
+    open-in-view: false
+
+  cache:
+    jcache:
+      config: classpath:ehcache.xml

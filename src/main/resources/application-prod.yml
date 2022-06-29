@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/todo
+    username: todo
+    password: todo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true

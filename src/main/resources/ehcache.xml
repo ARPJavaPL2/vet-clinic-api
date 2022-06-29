@@ -1,0 +1,32 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache-template name="default">
+        <expiry>
+            <ttl unit="minutes">30</ttl>
+        </expiry>
+        <heap unit="entries">1000</heap>
+    </cache-template>
+
+    <cache-template name="longExpirationTime">
+        <expiry>
+            <ttl unit="hours">2</ttl>
+        </expiry>
+        <heap unit="entries">500</heap>
+    </cache-template>
+
+    <cache alias="customer" uses-template="longExpirationTime"/>
+    <cache alias="customersPage" uses-template="default"/>
+    <cache alias="doctor" uses-template="longExpirationTime"/>
+    <cache alias="doctorsPage" uses-template="default"/>
+    <cache alias="doctorAppointmentsPage" uses-template="default"/>
+
+    <cache alias="doctorTimeDetails">
+        <expiry>
+            <ttl unit="hours">4</ttl>
+        </expiry>
+        <heap unit="entries">1000</heap>
+    </cache>
+
+</config>
